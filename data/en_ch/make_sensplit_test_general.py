@@ -20,8 +20,7 @@ def extractLocation(context, word):
         print(line[location], word)
     return location, line
 
-def delete_marker(w_lst):
-    return ' '.join([w for w in w_lst if w not in ['<\b>','<b>']])
+
 def smooth(context):
     line = context.split(' ')
     i = 0
