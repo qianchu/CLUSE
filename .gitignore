@@ -1,4 +1,7 @@
+data/en_ch/ch_tra.txt
+data/en_ch/en.txt
 data/en_ch/output/
-.idea/
+data/en_ch/en_ch_parallel/
 data/en_ch/*_vocab
+.idea/
 
