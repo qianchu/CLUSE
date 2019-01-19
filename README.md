@@ -61,6 +61,13 @@ will generate all the training and evaluation files for the Engilsh-Chinese lang
 ## Training
 To train the Engilsh-German sense embeddings:
 ```
+docker build -t nvidia-miniconda3-cuda9-18.04 .
+docker run  --name crossling2 -it -v /home/ql261/crossling_contextualized_embed:/home/ql261/crossling_contextualized_embed nvidia-miniconda3-cuda9-18.04 /bin/bash
+docker attach crossling2
+TF_CFLAGS=( $(python -c 'import tensorflow as tf; print(" ".join(tf.sysconfig.get_compile_flags()))') )
+TF_LFLAGS=( $(python -c 'import tensorflow as tf; print(" ".join(tf.sysconfig.get_link_flags()))') )
+g++ -std=c++11 -shared word2vec_ops.cc word2vec_kernels.cc -o word2vec_ops.so -fPIC ${TF_CFLAGS[@]} ${TF_LFLAGS[@]} -O2
+
 cd en_de/
 bash train.sh checkpoint_dir major_weight reg_weight
 ```
