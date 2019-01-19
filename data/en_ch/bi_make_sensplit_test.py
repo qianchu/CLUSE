@@ -50,9 +50,9 @@ for idx in startIdx:
     en_sents.append(en_sent)
     scores.append(float(dataset[idx*4+3].split()[-1]))
 
-out = open('output/bi_ratings.txt', 'w')
-bcws_en=open('output/bcws_en.txt','w')
-bcws_zh=open('output/bcws_zh.txt','w')
+out = open('bi_ratings.txt', 'w')
+bcws_en=open('bcws_en.txt','w')
+bcws_zh=open('bcws_zh.txt','w')
 cnt = 0
 ch_pos = []
 ch_id_sents = []
