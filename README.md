@@ -36,7 +36,7 @@ python bi_make_sensplit_test.py (to produce bi_ratings.txt and english (bcws_en.
 
 Then put the *ratings.txt* from [SCWS](https://www.socher.org/index.php/Main/ImprovingWordRepresentationsViaGlobalContextAndMultipleWordPrototypes) into *data/en_ch/* and *data/en_de/*.
 ```
-python make_sensplit_test_general.py ratings.txt scws_ratings.txt (to produce scws ratings and english (scws_en.txt))
+python make_sensplit_test_general.py en_vocab ratings.txt scws_ratings.txt (to produce scws ratings and english (scws_en.txt))
 ```
 Since this work requires parallel corpus, you have to prepare two files for each language pair. These two files should have the same number of lines, such that the sentences with same line number form a paralle setence pair.
 
