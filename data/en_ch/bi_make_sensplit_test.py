@@ -87,7 +87,7 @@ for en_sent, ch_sent, score in zip(en_sents, ch_sents, scores):
     ch_pos.append(test_pos)
     assert temp_sent[test_pos] == test_word[0]
     ch_id_sents.append(temp_id)
-    bcws_zh.write('{0}\t{1}\t{2}\n'.format(' '.join(ch_word_final),str(test_pos),score))
+    bcws_zh.write('{0}\t{1}\t{2}\n'.format(' '.join(sent_ch_out),str(test_pos),score))
 
 
     # then en part
