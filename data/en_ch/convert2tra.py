@@ -12,5 +12,7 @@ for line in f:
         if word not in c_punc:
             converted = openCC.convert(word)
             temp.append(converted)
+        else:
+            temp.append(word)
     out.write(' '.join(temp)+'\n')
 out.close()
