@@ -8,7 +8,7 @@ out = open('ch_tra.txt', 'w', encoding='utf-8')
 f = open(sys.argv[1], encoding='utf-8').read().splitlines()
 for line in f:
     temp = []
-    for word in line.split(' '):
+    for word in line.split():
         if word not in c_punc:
             converted = openCC.convert(word)
             temp.append(converted)
