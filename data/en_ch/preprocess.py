@@ -58,15 +58,15 @@ def build_vocab(data, l, vocab_size):
     s = [(k, word2freq[k]) for k in sorted(word2freq, key=word2freq.get, reverse=True)]
     # write pad, unk ... to vocab files
     vocab = open(l+"_vocab", 'w', encoding='utf-8')
-    vocab.write('_PAD 0 0\n')
-    vocab.write('_UNK 1 0\n')
+    vocab.write('_PAD\t0\t0\n')
+    vocab.write('_UNK\t1\t0\n')
     word2id['_PAD'] = 0
     word2id['_UNK'] = 1
     for idx, t in enumerate(s[:vocab_size]):
         word = t[0]
         freq = t[1]
         word2id[word] = len(word2id)
-        vocab.write('{} {} {}\n'.format(word, word2id[word], freq))
+        vocab.write('{}\t{}\t{}\n'.format(word, word2id[word], freq))
     vocab.close()
     out = open(l+'.out', 'w')
     for line in data:
