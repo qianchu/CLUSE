@@ -2,5 +2,6 @@ data/en_ch/*
 !data/en_ch/*.py
 !data/en_ch/*.sh
 .idea/
+*log*
 data/.DS_Store
 *pyc
