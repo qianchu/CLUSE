@@ -8,7 +8,7 @@ python convert2tra.py $ch_txt
 echo python3 tokenize_english.py $en_txt
 python tokenize_english.py $en_txt
 echo python3 preprocess.py $en_txt ch_tra.txt $en_vocab_limit $ch_vocab_limit
-python preprocess.py $en_txt ch_tra.txt $en_vocab_limit $ch_vocab_limit
+python preprocess.py $en_txt ch_tra.txt $en_vocab_limit $ch_vocab_limit en ch
 echo python3 bi_make_sensplit_test.py
 python bi_make_sensplit_test.py
 echo python3 make_sensplit_test_general.py en_vocab ratings.txt en_test.txt scws_en.txt
