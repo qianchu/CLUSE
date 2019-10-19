@@ -57,7 +57,7 @@ def build_vocab(data, l, vocab_size):
             word2freq[word] += 1
     s = [(k, word2freq[k]) for k in sorted(word2freq, key=word2freq.get, reverse=True)]
     # write pad, unk ... to vocab files
-    vocab = open(l+"_vocab", 'w', encoding='utf-8')
+    vocab = open(l+"_vocab_"+str(vocab_size), 'w', encoding='utf-8')
     vocab.write('_PAD\t0\t0\n')
     vocab.write('_UNK\t1\t0\n')
     word2id['_PAD'] = 0
