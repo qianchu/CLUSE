@@ -77,5 +77,5 @@ def build_vocab(data, l, vocab_size):
 if __name__ == '__main__':
     data_en, data_ch = clean_data()
     import os
-    build_vocab(data_en, os.path.basename(sys.argv[1]), int(sys.argv[3]))
-    build_vocab(data_ch, os.path.basename(sys.argv[2]), int(sys.argv[4]))
+    build_vocab(data_en, sys.argv[1], int(sys.argv[3]))
+    build_vocab(data_ch, sys.argv[2], int(sys.argv[4]))
