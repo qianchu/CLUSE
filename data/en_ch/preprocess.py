@@ -14,14 +14,14 @@ def is_number(s):
 def clean_data():
     raw_data_en = open(sys.argv[1], encoding='utf-8')
     raw_data_ch = open(sys.argv[2], encoding='utf-8')
-    trantab = str.maketrans('','',string.punctuation)
+    # trantab = str.maketrans('','',string.punctuation)
     ret_en = []
     ret_ch = []
     for line_en, line_ch in zip(raw_data_en, raw_data_ch):
         line_en = line_en.strip('\n')
         line_ch = line_ch.strip('\n')
-        line_en = line_en.translate(trantab)
-        line_ch = line_ch.translate(trantab)
+        # line_en = line_en.translate(trantab)
+        # line_ch = line_ch.translate(trantab)
         if len(line_en.strip(' ')) == 0 or len(line_ch.strip(' ')) == 0:
             continue
         line_en = line_en.lower()
@@ -31,17 +31,19 @@ def clean_data():
         line_en = []
         line_ch = []
         for idx, word in enumerate(words_en):
-            if is_number(word):
-                line_en.append('0')
-            elif word.isalnum():
-                line_en.append(word)
+            # if is_number(word):
+            #     line_en.append('0')
+            # elif word.isalnum():
+            #     line_en.append(word)
+            line_en.append(word)
         if len(line_en) == 0:
             continue
         for idx, word in enumerate(words_ch):
-            if is_number(word):
-                line_ch.append('0')
-            elif word.isalnum():
-                line_ch.append(word)
+            # if is_number(word):
+            #     line_ch.append('0')
+            # elif word.isalnum():
+            #     line_ch.append(word)
+            line_ch.append(word)
         if len(line_ch) == 0:
             continue
         ret_ch.append(line_ch)
