@@ -24,8 +24,8 @@ def clean_data():
         # line_ch = line_ch.translate(trantab)
         if len(line_en.strip(' ')) == 0 or len(line_ch.strip(' ')) == 0:
             continue
-        line_en = line_en.lower()
-        line_ch = line_ch.lower()
+        line_en = line_en
+        line_ch = line_ch
         words_en = line_en.split(' ')
         words_ch = line_ch.split(' ')
         line_en = []
